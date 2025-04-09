@@ -69,6 +69,7 @@ export default function Contact({ language }: ContactProps) {
     },
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   function onSubmit(_data: FormData) {
     setIsSubmitting(true);
     

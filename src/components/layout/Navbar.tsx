@@ -54,7 +54,7 @@ const navLinks: NavLink[] = [
 
 // TheDan AI Logo component with theme support
 const Logo = () => {
-  const { theme } = useTheme();
+  useTheme();
   
   return (
     <div className="flex items-center space-x-2">
