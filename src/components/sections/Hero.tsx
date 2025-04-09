@@ -10,12 +10,12 @@ export default function Hero({ language }: HeroProps) {
   const content = {
     vi: {
       tagline: "Xây dựng trợ lý AI mạnh mẽ chỉ trong vài phút",
-      subtext: "TheDan AI giúp bạn tạo ra các đại diện AI thông minh, tự động hóa quy trình làm việc và nâng cao hiệu suất mà không cần kiến thức lập trình.",
+      subtext: "Dan AI giúp bạn tạo ra các đại diện AI thông minh, tự động hóa quy trình làm việc và nâng cao hiệu suất mà không cần kiến thức lập trình.",
       cta: "Bắt đầu ngay",
     },
     en: {
       tagline: "Build powerful AI assistants in minutes",
-      subtext: "TheDan AI helps you create intelligent AI agents, automate workflows, and boost productivity without coding knowledge.",
+      subtext: "Dan AI helps you create intelligent AI agents, automate workflows, and boost productivity without coding knowledge.",
       cta: "Get Started",
     },
   };

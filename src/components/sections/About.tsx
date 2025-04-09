@@ -9,7 +9,7 @@ export default function About({ language }: AboutProps) {
     vi: {
       title: "Về chúng tôi",
       subtitle: "Chúng tôi là ai và sứ mệnh của chúng tôi",
-      description: `TheDan AI là một nền tảng xây dựng Agent AI tiên tiến được thiết kế để giúp các doanh nghiệp và cá nhân tận dụng sức mạnh của trí tuệ nhân tạo một cách dễ dàng và hiệu quả.
+      description: `Dan AI là một nền tảng xây dựng Agent AI tiên tiến được thiết kế để giúp các doanh nghiệp và cá nhân tận dụng sức mạnh của trí tuệ nhân tạo một cách dễ dàng và hiệu quả.
       
       Chúng tôi tin rằng công nghệ AI không nên chỉ dành cho các chuyên gia kỹ thuật. Đó là lý do tại sao chúng tôi đã xây dựng một nền tảng trực quan cho phép bất kỳ ai cũng có thể tạo ra các giải pháp AI mạnh mẽ mà không cần kiến thức lập trình.
       
@@ -18,7 +18,7 @@ export default function About({ language }: AboutProps) {
     en: {
       title: "About Us",
       subtitle: "Who we are and our mission",
-      description: `TheDan AI is an advanced AI Agent Builder platform designed to help businesses and individuals harness the power of artificial intelligence easily and effectively.
+      description: `Dan AI is an advanced AI Agent Builder platform designed to help businesses and individuals harness the power of artificial intelligence easily and effectively.
       
       We believe that AI technology shouldn't be just for technical experts. That's why we've built an intuitive platform that enables anyone to create powerful AI solutions without requiring programming knowledge.
       

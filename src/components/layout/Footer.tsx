@@ -10,7 +10,7 @@ interface FooterProps {
 export default function Footer({ language }: FooterProps) {
   const content = {
     vi: {
-      copyright: "© 2024 TheDan AI. Bản quyền thuộc về chúng tôi.",
+      copyright: "© 2024 Dan AI. Bản quyền thuộc về chúng tôi.",
       links: [
         { name: "Điều khoản", href: "#" },
         { name: "Bảo mật", href: "#" },
@@ -18,7 +18,7 @@ export default function Footer({ language }: FooterProps) {
       ],
     },
     en: {
-      copyright: "© 2024 TheDan AI. All rights reserved.",
+      copyright: "© 2024 Dan AI. All rights reserved.",
       links: [
         { name: "Terms", href: "#" },
         { name: "Privacy", href: "#" },
@@ -32,7 +32,7 @@ export default function Footer({ language }: FooterProps) {
     { icon: <Twitter size={20} />, href: "#", label: "Twitter" },
     { icon: <Instagram size={20} />, href: "#", label: "Instagram" },
     { icon: <Linkedin size={20} />, href: "#", label: "LinkedIn" },
-    { icon: <Mail size={20} />, href: "mailto:info@thedan.ai", label: "Email" },
+    { icon: <Mail size={20} />, href: "mailto:cuongtl92@gmail.com", label: "Email" },
   ];
 
   return (
@@ -41,7 +41,7 @@ export default function Footer({ language }: FooterProps) {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           <div className="flex flex-col items-start gap-4">
             <Link href="/" className="flex items-center space-x-2">
-              <span className="text-xl font-bold">TheDan AI</span>
+              <span className="text-xl font-bold">Dan AI</span>
             </Link>
             <p className="text-sm text-muted-foreground">
               {content[language].copyright}

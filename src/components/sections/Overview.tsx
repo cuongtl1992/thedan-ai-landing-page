@@ -11,7 +11,7 @@ export default function Overview({ language }: OverviewProps) {
   const content = {
     vi: {
       title: "Tính năng chính",
-      subtitle: "Khám phá những gì TheDan AI có thể làm",
+      subtitle: "Khám phá những gì Dan AI có thể làm",
       features: [
         {
           icon: <Brain className="h-10 w-10 text-primary" />,
@@ -37,7 +37,7 @@ export default function Overview({ language }: OverviewProps) {
     },
     en: {
       title: "Core Features",
-      subtitle: "Discover what TheDan AI can do",
+      subtitle: "Discover what Dan AI can do",
       features: [
         {
           icon: <Brain className="h-10 w-10 text-primary" />,

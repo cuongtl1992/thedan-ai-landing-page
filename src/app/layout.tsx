@@ -14,22 +14,22 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "TheDan AI - AI Agent Builder Platform",
-  description: "Build powerful AI agents with TheDan AI - An intuitive and modern AI Agent Builder Platform",
-  keywords: "AI, artificial intelligence, agent builder, AI platform, TheDan AI",
-  creator: "TheDan AI",
+  title: "Dan AI - AI Agent Builder Platform",
+  description: "Build powerful AI agents with Dan AI - An intuitive and modern AI Agent Builder Platform",
+  keywords: "AI, artificial intelligence, agent builder, AI platform, Dan AI",
+  creator: "Dan AI",
   openGraph: {
     type: "website",
     locale: "vi_VN",
-    url: "https://thedan.ai",
-    title: "TheDan AI - AI Agent Builder Platform",
-    description: "Build powerful AI agents with TheDan AI - An intuitive and modern AI Agent Builder Platform",
-    siteName: "TheDan AI",
+    url: "https://thedan.biz",
+    title: "Dan AI - AI Agent Builder Platform",
+    description: "Build powerful AI agents with Dan AI - An intuitive and modern AI Agent Builder Platform",
+    siteName: "Dan AI",
   },
   twitter: {
     card: "summary_large_image",
-    title: "TheDan AI - AI Agent Builder Platform",
-    description: "Build powerful AI agents with TheDan AI - An intuitive and modern AI Agent Builder Platform",
+    title: "Dan AI - AI Agent Builder Platform",
+    description: "Build powerful AI agents with Dan AI - An intuitive and modern AI Agent Builder Platform",
   },
 };
 
@@ -46,10 +46,10 @@ export default function RootLayout({
             {
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "TheDan AI",
-              "url": "https://thedan.ai",
-              "logo": "https://thedan.ai/logo.png",
-              "description": "Build powerful AI agents with TheDan AI - An intuitive and modern AI Agent Builder Platform",
+              "name": "Dan AI",
+              "url": "https://dan.ai",
+              "logo": "https://dan.ai/logo.png",
+              "description": "Build powerful AI agents with Dan AI - An intuitive and modern AI Agent Builder Platform",
               "address": {
                 "@type": "PostalAddress",
                 "addressCountry": "Vietnam"
@@ -58,12 +58,12 @@ export default function RootLayout({
                 "@type": "ContactPoint",
                 "telephone": "",
                 "contactType": "customer service",
-                "email": "info@thedan.ai"
+                "email": "info@dan.ai"
               },
               "sameAs": [
-                "https://facebook.com/thedanai",
-                "https://twitter.com/thedanai",
-                "https://linkedin.com/company/thedanai"
+                "https://facebook.com/danai",
+                "https://twitter.com/danai",
+                "https://linkedin.com/company/danai"
               ]
             }
           `}

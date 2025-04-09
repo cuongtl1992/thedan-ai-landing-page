@@ -1,8 +1,7 @@
-# TheDan AI Landing Page
+# Dan AI Landing Page
 
-A simple, modern, and easy-to-deploy landing page for TheDan AI to introduce the AI Agent Builder Platform and attract users.
+A simple, modern, and easy-to-deploy landing page for Dan AI to introduce the AI Agent Builder Platform and attract users.
 
-![TheDan AI](https://via.placeholder.com/800x400?text=TheDan+AI+Landing+Page)
 
 ## Features
 
@@ -41,8 +40,8 @@ A simple, modern, and easy-to-deploy landing page for TheDan AI to introduce the
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/thedan-ai-landing.git
-   cd thedan-ai-landing
+   git clone https://github.com/yourusername/dan-ai-landing.git
+   cd dan-ai-landing
    ```
 
 2. Install dependencies:
@@ -122,10 +121,6 @@ thedan-ai-landing/
 - **Theme Colors:** Edit the CSS variables in `src/app/globals.css`
 - **Content:** Modify the text in each component's content object
 - **SEO:** Update metadata in `src/app/layout.tsx`
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments
 

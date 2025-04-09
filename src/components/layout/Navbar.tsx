@@ -52,7 +52,7 @@ const navLinks: NavLink[] = [
   },
 ];
 
-// TheDan AI Logo component with theme support
+// Dan AI Logo component with theme support
 const Logo = () => {
   useTheme();
   
@@ -60,7 +60,7 @@ const Logo = () => {
     <div className="flex items-center space-x-2">
       {/* Logo text with AI in accent/primary color */}
       <span className="text-2xl font-bold">
-        TheDan<span className="text-primary">AI</span>
+        Dan<span className="text-primary">AI</span>
       </span>
     </div>
   );
