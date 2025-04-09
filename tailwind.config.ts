@@ -66,9 +66,8 @@ const config: Config = {
   		},
   		fontFamily: {
   			sans: [
-  				'var(--font-roboto)',
   				'var(--font-sans)',
-  				'Inter',
+  				'Roboto',
   				'sans-serif'
   			]
   		}

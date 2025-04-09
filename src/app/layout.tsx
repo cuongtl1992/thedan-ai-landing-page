@@ -5,10 +5,12 @@ import Navbar from "@/components/layout/Navbar";
 import "./globals.css";
 import Script from "next/script";
 
+// Configure Roboto font with all weights
 const roboto = Roboto({
   subsets: ['latin'],
   weight: ['100', '300', '400', '500', '700', '900'],
-  variable: '--font-roboto',
+  display: 'swap',
+  variable: '--font-sans', // Use the --font-sans variable that tailwind expects
 });
 
 export const metadata: Metadata = {
@@ -37,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" suppressHydrationWarning>
+    <html lang="vi" suppressHydrationWarning className={roboto.variable}>
       <head>
         <Script id="schema-org" type="application/ld+json">
           {`
@@ -76,9 +78,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body
-        className={`${roboto.variable} font-sans antialiased min-h-screen`}
-      >
+      <body className="font-sans antialiased min-h-screen">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
