@@ -1,0 +1,190 @@
+---
+description: Apply these rules when making changes to the project
+globs:
+alwaysApply: true
+---
+
+Update this rule if user requested changes to the project requirement, etc.
+# Dan AI Landing Page Implementation Guide
+
+This document provides a step-by-step guide to build the Dan AI landing page using Next.js 14, TypeScript, Tailwind CSS, and shadcn components. The guide details the project setup, folder structure, core features implementation, and security measures integrated throughout the project.
+
+---
+
+## 1. Project Setup & Environment
+
+- **Initialize a Next.js Project:**
+  - Use the App Router feature from Next.js 14.
+  - Run the following command using your preferred package manager:
+    ```bash
+    npx create-next-app@latest dan-ai-landing-page --typescript --experimental-app
+    ```
+
+- **Install Dependencies:**
+  - Tailwind CSS (with PostCSS and Autoprefixer) and shadcn components:
+    ```bash
+    npm install tailwindcss postcss autoprefixer
+    npx tailwindcss init -p
+    ```
+  - Configure Tailwind CSS by updating the content paths in `tailwind.config.js`.
+
+- **Setup GitHub Pages Deployment:**
+  - Configure your `next.config.js` and the build scripts for GitHub Pages.
+  - Use a custom action or similar DevOps pipeline so that your production builds are secure and up-to-date.
+
+- **Security Considerations:**
+  - **Secure Defaults:** Ensure all sensitive environment variables (e.g., API keys for Google Analytics) are managed securely using secrets management in GitHub and not hard-coded in your source.
+  - **Least Privilege:** Only grant required permissions for build/deployment.
+
+---
+
+## 2. Folder Structure & Basic Configuration
+
+- **Recommended Folder Structure:**
+  - `/app`: Contains the Next.js app router pages and components.
+  - `/components`: Organize reusable UI components (e.g., NavigationBar, Hero, Pricing, ContactForm).
+  - `/styles`: Global styles including Tailwind CSS customizations and the provided theme variables.
+  - `/public`: Static assets, favicon, and SEO social media preview images.
+
+- **Tailwind CSS Configuration:**
+  - Integrate the provided CSS color scheme in a global CSS file (e.g., `globals.css`).
+  - Define CSS variables under the `:root`, `.theme-dark`, and `.theme-light` selectors.
+
+- **Security Implementation:**
+  - Apply proper CSP (Content Security Policy) headers via Next.js configuration to reduce risks of XSS attacks.
+  - Validate all external inputs on server-side (e.g., form submissions) with built-in API route validations.
+
+---
+
+## 3. Implementation of Core Features
+
+### a. Navigation Bar
+
+- **Features to Implement:**
+  - Smooth scrolling to sections: "Features", "Pricing", "About Us", and "Contact".
+  - Language toggle (primary: Vietnamese, secondary: English).
+  - Light/Dark mode toggle with a smooth fade transition (200-300ms).
+  - "Sign In / Sign Up" link redirecting to `https://app.thedan.biz`.
+
+- **Steps:**
+  - Create a `NavigationBar` component under `/components`.
+  - Use React hooks to manage state for the active theme (light/dark). Apply the theme class to the root document (`<html>` or `<body>`).
+  - For language toggle, consider using a localization library (like `next-i18next`) and store the toggle using a secure context/state management solution.
+
+- **Security Considerations:**
+  - **Input Validation:** When handling URL parameters for redirection or language selections, validate and sanitize inputs to prevent injection or open redirect vulnerabilities.
+
+### b. Hero Section
+
+- **Features to Implement:**
+  - Display a catchy tagline and brief introduction of TheDan AI.
+  - Showcase a clear call-to-action button linking to `https://app.thedan.biz`.
+
+- **Steps:**
+  - Create a `Hero` component with large headings and styled paragraphs.
+  - Use shadcn components for enhanced UI elements ensuring consistency and accessibility.
+
+- **Security Considerations:**
+  - **Content Security:** Ensure text and images do not expose any sensitive information. Use proper alt attributes on images.
+
+### c. Overview Section
+
+- **Features to Implement:**
+  - Describe functionalities and benefits of TheDan AI.
+  - Use interactive elements to engage users if necessary.
+
+- **Steps:**
+  - Create an `Overview` component. Focus on clean text layout and visual emphasis using Tailwind’s typography classes.
+
+### d. Pricing Section
+
+- **Features to Implement:**
+  - Display three pricing tiers:
+    - Personal: 499.000đ (1 Agent + 1 MCP)
+    - Pro: 799.000đ (5 Agents + 5 MCP)
+    - Business: 1.499.000đ (20 Agents + 20 MCP)
+
+- **Steps:**
+  - Create a `Pricing` component that displays pricing cards. Ensure the layout adapts well on mobile devices.
+
+- **Security Considerations:**
+  - **Data Integrity:** Ensure the pricing values are not exposed to manipulation. Static data is preferable so that it is not loaded from untrusted inputs.
+
+### e. Contact Form
+
+- **Features to Implement:**
+  - Form fields: Name, Email, and Message.
+  - Email field must implement robust validation on client and server sides (using regex and/or validation libraries).
+  - Display a confirmation message on successful submission.
+  - Include a privacy notice informing users about their data processing.
+
+- **Steps:**
+  - Create a `ContactForm` component that uses controlled components for form fields.
+  - On submission, perform client-side validation before sending data to a secure API endpoint.
+  - On the server (e.g., an API route in Next.js), validate and sanitize all inputs to mitigate injection risks.
+
+- **Security Considerations:**
+  - **Input Sanitization:** Use server-side validation libraries (such as `yup` or `zod`) to sanitize and validate incoming data.
+  - **Fail Securely:** Ensure error responses do not expose stack traces or sensitive internal information.
+
+### f. Responsive and Themed Design
+
+- **Features to Implement:**
+  - Ensure that the landing page layout is mobile-friendly.
+  - Implement Light/Dark mode using the provided Tailwind CSS variables with a smooth fade transition (200-300ms).
+
+- **Steps:**
+  - Use Tailwind CSS utilities to build responsive layouts (flex, grid, etc.).
+  - Integrate a theme toggle that dynamically switches between `.theme-light` and `.theme-dark` classes on the document's root element.
+
+- **Security Considerations:**
+  - **Secure Client-Side Storage:** Ensure that theme and language preferences stored (e.g., in cookies or local storage) do not contain sensitive information.
+
+---
+
+## 4. SEO & Analytics Integration
+
+- **SEO Optimization:**
+  - Add meta tags (description, keywords, viewport) and social media preview tags (Open Graph, Twitter Cards) in the `<Head>` component.
+  - Leverage Next.js’s built-in `Head` component for structured data and meta declarations.
+
+- **Analytics:**
+  - Integrate Google Analytics by monitoring page views. Ensure the GA scripts load asynchronously.
+  - Secure the implementation by not exposing any sensitive tracking IDs publicly in source files (store them securely using environment variables).
+
+---
+
+## 5. Cookie Consent & Additional Security Measures
+
+- **Cookie Consent Implementation:**
+  - Determine if cookie consent is required by the target jurisdiction. If so, implement a compliant cookie consent banner.
+  - Use a third-party library or custom modal that follows best practices like minimal data exposure and clear accept/reject options.
+
+- **Security Enhancements:**
+  - **HTTP Headers:** Enforce security-related headers using Next.js middleware or server configuration, including `Content-Security-Policy`, `Strict-Transport-Security`, `X-Content-Type-Options`, and `X-Frame-Options`.
+  - **Rate Limiting:** For API routes (e.g., contact form submissions), implement rate limiting to mitigate DoS attacks.
+
+---
+
+## 6. Final Testing & Deployment
+
+- **Local Testing:**
+  - Test responsiveness and theme toggling across devices and browsers.
+  - Validate form submissions and ensure proper display of confirmation messages and error handling.
+  - Use tools (e.g., Lighthouse) to audit performance, accessibility, and SEO.
+
+- **Security Testing:**
+  - Perform vulnerability scans and analyze dependency risks using tools like Snyk or npm audit.
+  - Validate that all common security headers are correctly applied.
+
+- **Deployment to GitHub Pages:**
+  - Configure your GitHub Pages settings to serve the production build. Ensure that the build process minimizes exposure of source maps or debug information.
+
+---
+
+## Conclusion
+
+This step-by-step guide outlines the implementation of the Dan AI Landing Page with an emphasis on
+security by design. At every stage—from project setup to deployment—apply security best practices such as input validation, secure defaults, and defense in depth to ensure the platform remains secure and resilient.
+
+Happy coding!

@@ -1,0 +1,125 @@
+---
+description: Apply these rules when making changes to the project
+globs:
+alwaysApply: true
+---
+
+Update this rule if user requested changes to the project requirement, etc.
+# Implementation plan
+
+## Phase 1: Environment Setup
+
+1. **Prevalidation:** Check if the current directory is already a Next.js project (look for package.json and next.config.js). If found, skip project initialization. *(Project Requirements: General Setup)*
+
+2. **Verify Node.js Environment:** Run `node -v` and `npm -v` to ensure you have Node.js and npm installed. *(Tech Stack: Core Tools)*
+
+3. **Install Next.js 14 If Needed:** Confirm that Next.js 14 is used (exact requirement). If not, install or create a new project using Next.js 14. *(Tech Stack: Frontend - Next.js 14 is required for compatibility with current AI coding tools)*
+
+4. **Cursor Environment Setup:**
+   - Check if the `.cursor` directory exists in the project root. If not, create it. *(Cursor: Environment Setup)
+   - Within the `.cursor` directory, create a file named `cursor_metrics.md` if it does not already exist. *(Cursor: Environment Setup)*
+   - Refer to the file `cursor_project_rules.mdc` for guidance on populating `cursor_metrics.md`.
+
+## Phase 2: Frontend Development
+
+5. **Initialize Next.js 14 Project:** Run the command:
+   ```bash
+   npx create-next-app@14 --typescript thedan-ai
+   ```
+   This ensures the project uses Next.js 14 with TypeScript. *(Project Requirements: Tech Stack)
+
+6. **Navigate into Project Directory:** Change into the project directory:
+   ```bash
+   cd thedan-ai
+   ```
+   *(General Setup)*
+
+7. **Set Up Tailwind CSS:** Follow the Tailwind CSS setup for Next.js by installing dependencies and adding configuration files (tailwind.config.js, postcss.config.js) along with the provided CSS variables for theming. *(Project Requirements: Design & Theme; Tech Stack: Tailwind CSS)
+
+8. **Integrate Shadcn Components:** Install and configure Shadcn UI components to be used throughout the landing page. *(Project Requirements: Design & Theme; Tech Stack: Shadcn components)
+
+9. **Develop Navigation Bar Component:** Create a component (`/src/components/Navbar.tsx`) with the following features:
+   - Smooth scrolling links to Features, Pricing, About Us, and Contact sections.
+   - Language toggle (default Vietnamese, secondary English).
+   - Light/Dark mode toggle with a smooth fade transition (200-300ms).
+   - "Sign In / Sign Up" link redirecting to [https://app.thedan.biz](https://app.thedan.biz).
+   *(Project Requirements: Navigation Bar)
+
+10. **Create Hero Section Component:** Create `/src/components/Hero.tsx` that includes:
+    - A catchy tagline.
+    - A prominent call-to-action button linking to [https://app.thedan.biz](https://app.thedan.biz).
+    *(Project Requirements: Hero Section)
+
+11. **Build Overview Section Component:** Create `/src/components/Overview.tsx` that explains core functionalities and benefits of TheDan AI. *(Project Requirements: Overview Section)*
+
+12. **Develop Pricing Section Component:** Create `/src/components/Pricing.tsx` that displays the following plans:
+    - Personal: 499.000đ (1 Agent + 1 MCP)
+    - Pro: 799.000đ (5 Agents + 5 MCP)
+    - Business: 1.499.000đ (20 Agents + 20 MCP)
+    *(Project Requirements: Pricing Section)*
+
+13. **Implement Contact/Lead Capture Form:** Create `/src/components/ContactForm.tsx` with input fields for Name, Email, and Message. Include:
+    - Validation for each field.
+    - A confirmation message on successful submission.
+    - A privacy notice.
+    *(Project Requirements: Contact/Lead Capture Form)
+
+14. **Ensure Responsive Design:** Utilize Tailwind CSS utilities to guarantee that all components render well on a range of devices (mobile, tablet, desktop). *(Project Requirements: Responsive Design)
+
+15. **Client-Side Form Validation:** Add basic TypeScript-based validation logic for the contact form. *(Project Requirements: Contact Form)
+
+## Phase 3: SEO and Meta Data Setup
+
+16. **Configure Meta Tags:** In the main `<Head>` component (e.g., `/src/app/head.tsx`), add meta tags for SEO, including title, description, and keywords. *(Project Requirements: SEO)
+
+17. **Add Social Media Settings:** Within the `<Head>` component, include Open Graph and Twitter Card meta tags for social media preview. *(Project Requirements: SEO)
+
+18. **Integrate Structured Data:** Embed JSON-LD structured data for schema.org to improve search engine understanding. *(Project Requirements: SEO)
+
+## Phase 4: Integration and Interactivity
+
+19. **Implement Smooth Scrolling:** Enhance navigation links to smoothly scroll to their respective sections using an appropriate JavaScript library or CSS scroll-behavior property. *(Project Requirements: Navigation Bar)
+
+20. **Enable Language Toggle Functionality:** Develop a state-based language toggle mechanism in the navbar that conditionally renders content in Vietnamese or English. *(Project Requirements: Navigation Bar)
+
+21. **Implement Light/Dark Mode Toggle:** Create theme toggle functionality using Tailwind CSS classes and CSS variables. Ensure the transition duration is set to 200-300ms for a smooth fade effect. *(Project Requirements: Navigation Bar and Design & Theme)
+
+22. **Link External Sign In/Sign Up:** Verify that the "Sign In / Sign Up" link always redirects users to [https://app.thedan.biz](https://app.thedan.biz). *(Project Requirements: Navigation Bar)
+
+## Phase 5: Deployment
+
+23. **Prepare for GitHub Pages Deployment:** Update `next.config.js` to include configuration for static export if necessary (via `next export`). *(Project Requirements: Deployment)
+
+24. **Build and Export the Static Site:** Run the build command and then export the site:
+    ```bash
+    npm run build
+    npm run export
+    ```
+    *(Project Requirements: Deployment; Fast loading times)
+
+25. **Deploy to GitHub Pages:** Follow these steps:
+    - Create a GitHub repository.
+    - Push your exported site content to the `gh-pages` branch.
+    - Configure GitHub Pages via repository settings to serve from the `gh-pages` branch.
+    *(Project Requirements: Deployment)
+
+26. **Integrate Google Analytics:** Add the Google Analytics script tag (with your tracking ID) to the `<Head>` component to enable site analytics. *(Project Requirements: Analytics)
+
+## Final Validation and Testing
+
+27. **Component-Level Testing:** Run your application locally (`npm run dev`) and manually verify that:
+    - All sections (Hero, Overview, Pricing, Contact) display as expected.
+    - Navigation links perform smooth scrolling.
+    - Language toggle correctly switches content.
+    - Light/Dark mode transitions smoothly (200-300ms).
+    *(Project Requirements: All UI Sections, Responsive Design)
+
+28. **SEO Testing:** Use browser plugins or online tools to validate meta tags, social previews, and structured data.
+
+29. **Form Validation Testing:** Submit the contact form with valid and invalid data to ensure that validation messages and confirmation messages work as expected.
+
+30. **Deployment Check:** After deploying to GitHub Pages, visit your deployed site and check fast loading times, responsiveness, and correct integration of all functionalities.
+
+31. **Final Review:** Confirm that all links, toggles, and sections operate as intended and that the overall design follows the provided CSS themes and guidelines.
+
+*End of Implementation Plan*

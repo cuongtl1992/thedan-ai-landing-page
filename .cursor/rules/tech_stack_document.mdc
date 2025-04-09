@@ -1,0 +1,86 @@
+---
+description: Apply these rules when making changes to the project
+globs:
+alwaysApply: true
+---
+
+Update this rule if user requested changes to the project requirement, etc.
+# Tech Stack Document for TheDan AI Landing Page
+
+This document outlines the technology choices for building a modern, simple, and easy-to-deploy landing page for TheDan AI, an AI Agent Builder Platform. The selected technologies aim to deliver a seamless and engaging user experience with a consistent visual theme that supports both dark and light modes.
+
+## Frontend Technologies
+
+For the user's interface, we’re leveraging the following technologies:
+
+- **Next.js 14 (App Router)**
+  - Provides a robust framework for building fast and scalable static websites. The app router simplifies navigation and ensures a smooth single-page scrolling experience.
+
+- **TypeScript**
+  - Used to add type safety and reduce potential bugs. It keeps the code clear and maintainable, which is especially valuable when scaling or working in teams.
+
+- **Tailwind CSS**
+  - A utility-first CSS framework that makes it simple to apply the specific color scheme. Tailwind allows for rapid styling adjustments and enforces consistency across the site.
+
+- **shadcn Components**
+  - These pre-built modern UI components help in quickly developing a sleek and user-friendly design, ensuring that the layout remains consistent and visually appealing.
+
+## Backend Technologies
+
+Since this project focuses on a landing page with informational content and minimal interactivity, the need for traditional backend technologies is minimal:
+
+- **Static Site Architecture**
+  - The landing page is primarily static, which means that it doesn't require extensive server-side operations.
+
+- **Contact Form Validation**
+  - Basic client-side form validation is implemented to ensure that required fields (name, email, message) are correctly filled out. This enhances user trust and minimizes entry errors.
+
+Although there is no dedicated backend server handling complex tasks, the design leaves room for potential future expansion (such as integrating serverless functions for more sophisticated form handling if needed).
+
+## Infrastructure and Deployment
+
+The project is designed with simplicity and ease of deployment in mind:
+
+- **GitHub Pages**
+  - A straightforward static site hosting solution that is simple to set up and maintain. This choice ensures quick deployment without the overhead of managing a server.
+
+- **Version Control and CI/CD**
+  - Utilizing Git via GitHub provides robust version control. While GitHub Pages supports static hosting, developers can set up basic CI/CD pipelines to automate deployment when updates are pushed.
+
+This infrastructure supports rapid iterations and an overall reliable deployment process.
+
+## Third-Party Integrations
+
+To enhance functionality and track usage, the following integrations are in place:
+
+- **Google Analytics**
+  - Integrated to monitor visitor behavior, track engagement, and provide insights into usage patterns. This data is vital for future improvements and understanding user interactions.
+
+Other integrations are minimal at this stage, keeping the landing page lightweight and focused on delivering core information efficiently.
+
+## Security and Performance Considerations
+
+Security and performance are key aspects of the project:
+
+- **Security Measures**
+  - The contact form includes input validation to ensure user data is correctly formatted before submission.
+  - A privacy notice is displayed to inform visitors about data collection practices, ensuring transparency.
+
+- **Performance Optimizations**
+  - Building the site as a static page hosted on GitHub Pages ensures rapid load times and minimal use of resources.
+  - SEO optimizations are implemented through meta tags, social media preview settings (Open Graph and Twitter Cards), and structured data (schema.org) to enhance visibility and ranking.
+  - The use of Tailwind CSS ensures efficient styling without heavy custom code, while smooth transitions (200-300ms fade for dark/light mode toggling) enhance user experience without performance degradation.
+
+## Conclusion and Overall Tech Stack Summary
+
+The chosen tech stack aligns perfectly with the project’s goals of simplicity, clarity, and modern appeal:
+
+- **Frontend**: Next.js 14, TypeScript, Tailwind CSS, and shadcn components deliver a modern, responsive, and visually consistent design that supports both dark and light themes.
+
+- **Backend**: A static site approach with essential form validation minimizes complexity while leaving room for future enhancements.
+
+- **Infrastructure**: GitHub Pages provides an easy, reliable deployment method, accompanied by sound version control practices.
+
+- **Third-Party Integrations & Performance**: Integrating Google Analytics, prioritizing SEO optimizations, and implementing efficient transitions and validations ensure a secure and engaging user experience.
+
+Overall, this tech stack caters to a fast deployment cycle, ease of maintenance, and a visually appealing product presentation that meets both user needs and project goals.

@@ -1,0 +1,113 @@
+---
+description: Apply these rules when making changes to the project
+globs:
+alwaysApply: true
+---
+
+Update this rule if user requested changes to the project requirement, etc.
+# Frontend Guideline Document
+
+This document outlines the frontend setup for TheDan AI landing page, a simple yet modern site built to introduce and promote the AI Agent Builder Platform. The guide covers the architecture, design principles, styling, component structure, state management, routing, performance optimization, and testing strategies used in the project.
+
+## Frontend Architecture
+
+The frontend is developed using Next.js 14 with the app router, taking full advantage of TypeScript for type safety and Tailwind CSS for styling. We also use shadcn components to build a robust, modular interface. This architecture supports scalability (easy addition of new sections or features), maintainability (clear separation of concerns and reusable components), and performance (static site generation and optimized asset loading).
+
+**Key Components:**
+- Next.js 14 with App Router
+- TypeScript
+- Tailwind CSS
+- shadcn components
+- GitHub Pages for deployment
+- Google Analytics for tracking
+
+## Design Principles
+
+The design of TheDan AI landing page adheres to several core principles:
+
+- **Usability:** Every element is designed for ease of use, ensuring visitors can quickly understand and navigate the site.
+- **Accessibility:** We follow modern accessibility standards making sure the interface works well for all users, including those with disabilities.
+- **Responsiveness:** The layout adapts across devices, from desktops to smartphones.
+- **Consistency:** The design maintains a consistent look and feel across both light and dark themes.
+- **SEO Optimization:** Meta tags, social preview settings, and structured data are all implemented to boost search engine ranking and visibility.
+
+These principles are integrated at every step, from layout decisions to interactive elements like buttons and forms, ensuring a friendly and intuitive user experience.
+
+## Styling and Theming
+
+Styling is managed using Tailwind CSS, along with shadcn components that provide pre-built design components. The project uses CSS variables to define a color scheme which supports two themes: light and dark. The transition between these themes is smooth (200-300ms).
+
+**CSS Methodology & Tools:**
+- Tailwind CSS provides utility-first styling backed by a robust design system.
+- Shadcn components streamline the creation of consistent user interfaces.
+- Custom CSS variables are used for theming, making it easy to modify or update the color palette.
+
+**Theme Style:**
+- A modern, clean, and flat design approach with hints of contemporary material cues.
+
+**Color Palette:**
+- Colors are defined in the provided CSS and cater to both light and dark modes. This ensures visual consistency throughout the application.
+
+**Font:**
+- The selected font reflects modern styling, ensuring high readability and a professional appearance. (If not explicitly provided, a standard system font stack is used.)
+
+## Component Structure
+
+The application uses a component-based architecture, meaning that UI elements like the Navigation Bar, Hero Section, Overview, Pricing, and Contact Form are built as individual, reusable components.
+
+**Organizational Structure:**
+- **Navigation Bar:** Includes links (Features, Pricing, About Us, Contact), language toggle (Vietnamese/English), light/dark mode toggle, and a Sign In / Sign Up button (linking to https://app.thedan.biz).
+- **Hero Section:** Contains a tagline and a call-to-action button.
+- **Overview Section:** Explains core functionalities and benefits.
+- **Pricing Section:** Details the Personal, Pro, and Business plans with clear pricing information.
+- **Contact Form:** Captures name, email, and message inputs, and includes proper validation and a confirmation step along with a privacy notice.
+
+Reusing components not only speeds up development but also ensures that future changes are applied consistently across the project.
+
+## State Management
+
+Given that this is a static landing page, the need for complex state management is minimal. However, local state is used for handling dynamic elements such as the contact form (input validation, error handling, and submission status) and theme toggling.
+
+**Approach:**
+- Use React's built-in state management and hooks (like useState and useEffect) for managing local state.
+- Keeping the state minimal ensures quick load times and a smooth user experience.
+
+## Routing and Navigation
+
+The site is structured as a single-page application (SPA) using Next.js's built-in routing. Smooth scrolling is implemented for navigation between sections on the page. 
+
+**Navigation Details:**
+- **Navigation Bar:** Provides links to key sections (Features, Pricing, About Us, Contact).
+- **Smooth Scrolling:** Enhances user experience when moving between sections.
+- **Language Toggle:** Allows users to switch between Vietnamese (primary) and English (secondary).
+- **External Links:** 'Sign In / Sign Up' redirects to https://app.thedan.biz.
+
+## Performance Optimization
+
+We implement various optimization strategies to ensure the site is fast and responsive:
+
+- **Lazy Loading:** Images and other assets load as they come into view, reducing initial load time.
+- **Code Splitting:** Next.js handles code splitting automatically to optimize page load speeds.
+- **Asset Optimization:** All static assets are optimized for fast delivery, which is ideal for deployment on GitHub Pages.
+- **CSS Purging:** Unused CSS is removed during production builds to reduce file size.
+
+These techniques collectively contribute to a faster, smoother user experience.
+
+## Testing and Quality Assurance
+
+Quality is maintained through a combination of testing strategies:
+
+- **Unit Tests:** Core components are tested to ensure individual functionalities work as expected.
+- **Integration Tests:** Verify that components interact correctly, especially in areas like the contact form where input validation and submission are critical.
+- **End-to-End Tests:** Ensure that the overall user journey (navigating between sections, toggling themes, and form submission) is seamless.
+
+**Tools Used:**
+- Testing frameworks suitable for Next.js projects (such as Jest and React Testing Library) ensure the reliability of frontend code.
+
+## Conclusion and Overall Frontend Summary
+
+The frontend for TheDan AI landing page has been designed with simplicity, modern aesthetics, and excellent user experience in mind. By leveraging Next.js, TypeScript, Tailwind CSS, and shadcn components, the project achieves a scalable, maintainable, and high-performance solution. The design principles—usability, accessibility, responsiveness, and consistency—are reflected in every component, from navigation to content sections.
+
+This guide ensures that even someone without a technical background can understand the frontend setup. It not only aligns with the project's goals but also sets TheDan AI apart with its modern, efficient, and user-friendly approach.
+
+We hope this document serves as a clear and comprehensive overview of the frontend architecture and practices applied to the project.

@@ -1,0 +1,17 @@
+---
+description: Apply these rules when making changes to the project
+globs:
+alwaysApply: true
+---
+
+Update this rule if user requested changes to the project requirement, etc.
+flowchart TD
+    A[User visits Website] --> B[Landing Page]
+    B --> C[Header Section: Nav Links, Language Toggle, Dark/Light Toggle, Sign In/Sign Up]
+    B --> D[Hero Section: Catchy Tagline and CTA]
+    D --> E[CTA Redirect: Sign Up Page https://app.thedan.biz]
+    B --> F[Overview Section: Core Functionalities and Benefits]
+    B --> G[Pricing Section: Personal 499.000đ (1 Agent + 1 MCP), Pro 799.000đ (5 Agent + 5 MCP), Business 1.499.000đ (20 Agent + 20 MCP)]
+    B --> H[Contact Form: Name, Email (Validation), Message, Confirmation, Privacy Notice]
+    B --> I[Footer: Social Media Links, Contact Info, Optional Subscription Form]
+    B --- J[SEO Setup: Meta Tags, Open Graph, Twitter Cards, Structured Data]

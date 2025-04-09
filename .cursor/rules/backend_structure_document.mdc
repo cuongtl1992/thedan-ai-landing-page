@@ -1,0 +1,140 @@
+---
+description: Apply these rules when making changes to the project
+globs:
+alwaysApply: true
+---
+
+Update this rule if user requested changes to the project requirement, etc.
+# Backend Structure Document
+
+This document describes the backend setup and infrastructure for TheDan AI landing page. Although the landing page itself is a static site hosted on GitHub Pages, a minimal backend is designed to support key interactive features such as the contact form. The backend has been designed with scalability, maintainability, and robust performance in mind.
+
+## 1. Backend Architecture
+
+The backend follows a lightweight, serverless-inspired architecture. The primary components include:
+
+- **Serverless Functions / Micro API Layer**
+  - Uses a Node.js environment with popular frameworks (such as Express or a serverless framework) to create RESTful endpoints. This approach ensures fast response times and easy scaling.
+- **Design Patterns**
+  - Organized using the Controller-Service structure to separate business logic from routing details.
+  - Emphasis on modular design, making it straightforward to add more endpoints or services as needed.
+- **Seamless Integration with Static Frontend**
+  - All API endpoints are designed to be consumed by static assets deployed on GitHub Pages, with secure and efficient cross-origin communication.
+
+This architecture supports the project’s goals by ensuring that even as the number of inquiries or API interactions grows, performance will remain strong and the codebase will be easy to manage.
+
+## 2. Database Management
+
+For storing data such as contact form submissions we use a lightweight SQL database solution. Key points include:
+
+- **Database Type:** SQL
+- **Database System:** PostgreSQL
+- **Data Structure & Storage:**
+  - Data is stored in tables with specific, well-defined columns to ensure clarity and maintainability.
+  - PostgreSQL is known for its reliability and performance which fits the modest needs of TheDan AI landing page.
+- **Data Management Practices:**
+  - Regular backups, schema migrations, and simple queries help maintain high performance and data integrity.
+  - The database is accessible via secure connections, ensuring that data is both stored and transmitted securely.
+
+## 3. Database Schema
+
+### Human Readable Overview
+
+- **Contacts Table:**
+  - This table stores all information captured from the landing page contact form.
+  - Key fields include a unique identifier, the visitor's name, email, message, and a timestamp for when the submission was received.
+
+### PostgreSQL Schema Definition
+
+Below is an example SQL schema for the contacts table in PostgreSQL:
+
+```
+CREATE TABLE contacts (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    message TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+## 4. API Design and Endpoints
+
+The backend offers a set of RESTful endpoints that facilitate communication between the static frontend and the server. Key aspects include:
+
+- **API Design:**
+  - RESTful in nature with clear, resource-oriented endpoints.
+  - Each endpoint returns data in JSON format and uses standard HTTP status codes.
+
+- **Key Endpoints:**
+  - **POST /api/contact**: Handles submissions from the contact form.
+    - Inputs: name, email, message.
+    - Validates data (e.g., proper email format) and stores the submission in the PostgreSQL database.
+    - Returns confirmation of successful submission or an error message in case of validation issues.
+  
+  - **GET /api/health**: A simple endpoint for monitoring and health checks.
+    - Returns a basic status message indicating the API is up and running.
+
+These endpoints ensure efficient data transfer and secure interactions between the landing page and backend processes.
+
+## 5. Hosting Solutions
+
+- **Landing Page:** Hosted on GitHub Pages to deliver a fast, static user experience.
+
+- **Backend Hosting:**
+  - The backend APIs can be hosted on a serverless environment such as Vercel, Netlify Functions, or AWS Lambda.
+  - **Benefits Include:**
+    - **Reliability:** Cloud providers offer high uptime and robustness.
+    - **Scalability:** Serverless functions automatically scale based on demand.
+    - **Cost-Effectiveness:** Pay for usage rather than maintaining dedicated servers.
+
+## 6. Infrastructure Components
+
+Key infrastructure components to ensure smooth operations include:
+
+- **Load Balancers:** Utilized by the cloud provider to distribute traffic evenly across serverless instances (abstracted in serverless environments).
+- **Caching Mechanisms:** Leveraging built-in caching of static hosts and possibly using in-memory data stores for rapid data retrieval if needed in the future.
+- **Content Delivery Network (CDN):** GitHub Pages benefits from integrated CDN features, speeding up static asset delivery.
+- **Cloud Functions Environment:** Ensures that backend endpoints are executed on demand and can scale up during traffic spikes.
+
+These components together provide a resilient system optimized for performance and a smooth user experience.
+
+## 7. Security Measures
+
+Security is a top priority in the backend design, and several protocols and practices ensure the protection of user data:
+
+- **Authentication & Authorization:**
+  - Public endpoints (like the contact form) do not require user authentication, but care is taken to prevent abuse via rate limiting and CAPTCHA integration if necessary.
+- **Data Encryption:**
+  - All data transmitted between the frontend and backend uses HTTPS to prevent interception.
+  - Sensitive data stored in the database is handled securely.
+- **Input Validation & Sanitization:** Ensures that data submitted via the contact form is properly validated, reducing risks of injection attacks.
+- **CORS Policies:** Configured to allow trusted origins (the GitHub Pages URL), ensuring that API endpoints are not misused by unauthorized domains.
+
+These measures help protect both user data and the integrity of the application.
+
+## 8. Monitoring and Maintenance
+
+To ensure the backend remains healthy and up-to-date, the following practices are implemented:
+
+- **Monitoring Tools:**
+  - Use of logging solutions and performance monitoring tools (such as Datadog, Sentry, or built-in cloud services) to watch for errors and performance bottlenecks.
+  - Regular health checks via the `/api/health` endpoint are in place.
+
+- **Maintenance Strategies:**
+  - Scheduled backups and routine updates, including dependency management and security patches.
+  - Automated testing on API endpoints to catch issues before deployment.
+
+These practices ensure any issues are quickly identified and resolved, maintaining optimal backend performance.
+
+## 9. Conclusion and Overall Backend Summary
+
+The backend structure for TheDan AI landing page is designed to be simple yet robust. Key points include:
+
+- A lightweight, serverless-inspired architecture facilitates quick development and easy maintenance.
+- PostgreSQL is used to manage contact form data efficiently with a simple, clear schema.
+- RESTful API endpoints provide secure, efficient interaction between the frontend and backend services.
+- Hosting solutions leverage both GitHub Pages (for frontend) and cloud-based serverless environments (for backend), ensuring scalability, reliability, and cost-effectiveness.
+- Comprehensive security measures, combined with proactive monitoring and maintenance practices, ensure data integrity and optimal performance.
+
+Overall, this backend setup harmonizes with the project’s goal: to create a simple, modern, and easy-to-deploy landing page that effectively supports user interactions while providing room for future enhancements.

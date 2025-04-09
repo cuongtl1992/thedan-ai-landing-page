@@ -1,0 +1,160 @@
+---
+description: Apply these rules when making changes to the project
+globs:
+alwaysApply: true
+---
+
+Update this rule if user requested changes to the project requirement, etc.
+# Project Requirements Document (PRD)
+
+## 1. Project Overview
+
+TheDan AI Landing Page is a simple, modern, and easy-to-deploy web page that introduces and promotes an AI Agent Builder Platform. Built as a static site with Next.js 14 and TypeScript, the landing page is designed with clean aesthetics and clear navigation in mind. Its primary purpose is to provide visitors with a clear understanding of TheDan AI’s offerings and to attract potential users or clients, all while maintaining a consistent visual style based on a predefined color scheme.
+
+This project is being built to establish an effective first impression for TheDan AI, ensuring that each visitor immediately grasps the platform’s value. Key objectives include presenting detailed product benefits, offering straightforward pricing information for three plans (Personal, Pro, Business), and facilitating user engagement through a clear call-to-action that directs visitors to a sign-up page. Success will be measured by the ease of navigation, the clarity of information communicated, and the smooth user experience across desktop and mobile devices.
+
+## 2. In-Scope vs. Out-of-Scope
+
+**In-Scope:**
+
+*   A hero section with a visually appealing design using the provided color scheme and CSS variables, featuring a catchy tagline and a call-to-action button that directs users to the sign-up page on the dedicated web app.
+*   An overview section that clearly explains the core functionalities and benefits of TheDan AI.
+*   A pricing section presenting three options: Personal (499.000đ with 1 Agent + 1 MCP), Pro (799.000đ with 5 Agent + 5 MCP), and Business (1.499.000đ with 20 Agent + 20 MCP). This is informational without payment processing.
+*   A simple navigation bar with smooth scrolling to sections (Features, Pricing, About Us, Contact) and language toggle options (Vietnamese as the primary language and English as secondary).
+*   A light/dark mode toggle with smooth transition animations (200-300 milliseconds).
+*   An interactive contact/lead capture form with fields for the user’s name, email address, and a message/inquiry, along with validation and a simple confirmation message.
+*   Integration with Google Analytics for tracking visitor behavior and basic SEO enhancements (meta tags, Open Graph/Twitter Cards, structured data).
+
+**Out-of-Scope:**
+
+*   Any dynamic back-end functionality or CMS integration.
+*   Complex integrations like payment gateway processing; pricing information is solely for display purposes.
+*   Integration of images or AI-generated graphics; the design will strictly use the provided CSS color scheme.
+*   Advanced animations or interactions beyond the smooth crossfade for the dark/light mode toggle.
+*   Cookies or third-party privacy tools beyond a simple privacy notice for the contact form.
+
+## 3. User Flow
+
+When a visitor lands on the page, they are greeted with a clean header that features a simplistic navigation bar. This bar includes links to different sections – such as Features, Pricing, About Us, Contact – as well as language and theme toggles. The hero section immediately captures attention with a striking background color (as defined by the CSS) and an engaging tagline accompanied by a call-to-action button that leads to a dedicated sign-up page on a separate app (<https://app.thedan.biz>).
+
+As the visitor scrolls down, they naturally move through a well-organized layout: first encountering an overview of TheDan AI’s core features and benefits, followed by detailed pricing options for various plans. The journey continues with an interactive contact form where users can submit inquiries, and concludes at the footer containing social media links and additional information. This single-page layout, enhanced by smooth scrolling transitions and quick visual feedback (such as confirmation messages and theme transitions), ensures an intuitive and seamless experience from start to finish.
+
+## 4. Core Features
+
+*   **Hero Section:**
+
+    *   Engaging tagline and clear call-to-action button directing visitors to the sign-up page.
+    *   Utilizes the brand’s color scheme for immediate visual impact.
+
+*   **Overview Section:**
+
+    *   Concise description of the platform’s functionalities and benefits.
+    *   Organized layout presenting information in an easily digestible format.
+
+*   **Pricing Section:**
+
+    *   Information display for three pricing tiers (Personal, Pro, Business) with specified details.
+    *   Clean, informative design without interactive payment processing.
+
+*   **Navigation Bar:**
+
+    *   Links to smooth scrolling sections (Features, Pricing, About Us, Contact).
+    *   Includes a language toggle (Vietnamese/English) and a theme mode toggle (light/dark) with smooth crossfade animation.
+    *   A “Sign In / Sign Up” link that redirects to a separate web app for authentication.
+
+*   **Responsive Design & Theming:**
+
+    *   Built with Tailwind CSS using predefined CSS variables for both dark and light modes.
+    *   Ensures the landing page adapts well to various screen sizes and devices.
+
+*   **Contact/Lead Capture Form:**
+
+    *   Includes fields for name, email, and message.
+    *   Implements field validation and displays a confirmation message upon successful submission.
+    *   Includes a privacy notice clarifying data collection practices.
+
+*   **SEO & Analytics Integration:**
+
+    *   Meta tags, social media preview settings (Open Graph, Twitter Cards), and structured data.
+    *   Google Analytics integration for monitoring visitor behavior.
+
+## 5. Tech Stack & Tools
+
+*   **Frontend:**
+
+    *   Next.js 14 (using the app router) for building a modern static site.
+    *   TypeScript for type safety and robust code.
+    *   Tailwind CSS for styling, ensuring the application of a consistent color scheme based on provided CSS variables.
+    *   Shadcn components to leverage modern UI design patterns.
+
+*   **Deployment:**
+
+    *   GitHub Pages for hosting the static site, ensuring simplicity and ease of deployment.
+
+*   **Analytics & SEO:**
+
+    *   Google Analytics for tracking user behavior.
+    *   SEO optimizations using meta tags, structured data (schema.org), Open Graph, and Twitter Cards.
+
+*   **IDE & AI Tools:**
+
+    *   Cursor for advanced AI-powered coding with real-time suggestions.
+    *   Claude 3.7 Sonnet for enhanced hybrid reasoning during implementation.
+
+## 6. Non-Functional Requirements
+
+*   **Performance:**
+
+    *   Fast load times should be ensured by maintaining a strict static site structure with no heavy assets or dynamic components.
+    *   Responsiveness across devices and browsers is essential.
+
+*   **Security:**
+
+    *   Basic security practices for handling form data (client-side validation and secure submission).
+    *   Privacy notice should be displayed for data collection purposes in the contact form.
+
+*   **Usability:**
+
+    *   Clear, accessible navigation with smooth scrolling transitions.
+    *   A simple, elegant design for an intuitive user experience.
+    *   A seamless toggle animation for dark/light mode lasting approximately 200-300 milliseconds.
+
+*   **SEO & Analytics:**
+
+    *   Proper integration of meta tags and structured data to enhance search engine visibility.
+    *   Google Analytics implementation to monitor visitor behavior with minimal performance impact.
+
+## 7. Constraints & Assumptions
+
+*   The landing page is a static site with no backend processing, meaning all interactions (except form submission validations) are handled on the client-side.
+*   No images or externally generated graphics will be used; design relies solely on CSS-defined colors and gradients.
+*   The provided CSS is to be strictly followed to maintain brand consistency, supporting both dark and light themes.
+*   Assumes that the “Sign In / Sign Up” functionality will redirect users to another dedicated web app, eliminating the need for internal authentication mechanisms.
+*   The site must be optimized for fast loading times even when deployed on GitHub Pages.
+*   It is assumed that there will be a basic level of SEO optimization (meta tags, structured data) and integration with Google Analytics for tracking and analysis.
+
+## 8. Known Issues & Potential Pitfalls
+
+*   **Theme Toggle Implementation:**
+
+    *   Ensuring a smooth animation for dark/light mode toggle (200-300 milliseconds) may require careful CSS transition management. Developers should test across multiple browsers to confirm consistency.
+
+*   **Responsive Design Variations:**
+
+    *   While Tailwind CSS is effective for responsiveness, edge cases (especially for very small screens) should be tested to ensure that text, buttons, and forms remain usable.
+
+*   **Static Form Submission:**
+
+    *   Although the contact form includes client-side validation, handling potential spam or misuse might be challenging without a backend. Consider basic measures such as simple CAPTCHA if required in future phases.
+
+*   **SEO & Analytics Integration:**
+
+    *   Ensuring that all SEO optimizations are correctly implemented is critical. Developers should verify that SEO meta tags, structured data, and social media preview settings display correctly when the page is shared.
+
+*   **Deployment Constraints:**
+
+    *   GitHub Pages, while straightforward for static hosting, may have limitations in handling high traffic. This should be kept in mind if the site’s popularity grows rapidly.
+
+By carefully addressing these potential issues during development, the project can maintain its focus on simplicity while ensuring robustness and a great user experience.
+
+This document serves as the main reference for all subsequent technical work and lays out every crucial detail for implementing the landing page for TheDan AI.

@@ -1,0 +1,108 @@
+---
+description: Apply these rules when making changes to the project
+globs:
+alwaysApply: true
+---
+
+Update this rule if user requested changes to the project requirement, etc.
+## Project Overview
+
+* **Type:** Landing Page
+* **Description:** Create a simple, modern, and easy-to-deploy landing page for TheDan AI to introduce the AI Agent Builder Platform and attract users.
+* **Primary Goal:** Introduce the platform effectively, highlight its core features, and drive user sign-ups via an external link (https://app.thedan.biz).
+
+## Project Structure
+
+### Framework-Specific Routing
+
+* **Directory Rules:**
+
+    * **Next.js 14 (App Router):** Use `app/[route]/page.tsx` conventions for all pages.
+    * Example 1: For the Hero Section, the component should reside in `app/hero/page.tsx`.
+    * Example 2: For the Contact Form, create `app/contact/page.tsx` following nested routes if needed.
+
+### Core Directories
+
+* **Versioned Structure:**
+
+    * **app/**: Contains all routing logic using Next.js 14 App Router structure (e.g. `app/hero`, `app/overview`, `app/pricing`, `app/contact`).
+    * Example 1: `app/api` → Reserved for any server actions if required in the future.
+
+### Key Files
+
+* **Stack-Versioned Patterns:**
+
+    * **`app/layout.tsx`:** Root layout file enforcing consistent theming and global configuration (including dark/light mode toggling).
+    * Example 1: `app/_app.tsx` is not used in Next.js 14 App Router, ensuring that App Router conventions are strictly followed.
+
+## Tech Stack Rules
+
+* **Version Enforcement:**
+
+    * **next@14:** Must use the App Router exclusively; avoid any usage of `pages/` directory or legacy routing methods.
+    * **typescript:** Enforce strict type checking and proper type declarations throughout the codebase.
+    * **tailwindcss:** Utilize the given CSS color variables for theming with Tailwind configuration tailored for both dark and light modes.
+    * **shadcn components:** Implement modern UI components as per provided guidelines, ensuring consistency across the landing page.
+
+## PRD Compliance
+
+* **Non-Negotiable:**
+
+    * "Create a simple, modern, and easy-to-deploy landing page for TheDan AI to introduce the platform and attract users." → All design and implementation decisions must align with this goal, ensuring rapid load times, a single-page layout, and smooth navigation with no AI-generated images.
+
+## App Flow Integration
+
+* **Stack-Aligned Flow:**
+
+    * The landing page is a single-page layout with navigation links that scroll smoothly to sections such as Hero, Overview, Pricing, and Contact.
+    * The hero section includes a catchy tagline and a call-to-action button that redirects to https://app.thedan.biz.
+    * The navigation bar supports dynamic toggles for dark/light mode with a smooth 200-300ms transition.
+    * External authentication is handled by redirecting to the provided sign in/up link (https://app.thedan.biz).
+
+## Best Practices
+
+* **Next.js 14:**
+    * Use the App Router consistently, with all route segments structured under the `app/` directory.
+    * Avoid mixing legacy Pages Router logic to prevent routing conflicts.
+    * Leverage Server Actions where applicable for data-fetching operations.
+
+* **TypeScript:**
+    * Maintain strict type safety and use explicit type annotations.
+    * Ensure proper use of interfaces and type definitions across components.
+    * Regularly update tsconfig settings to reflect best practices.
+
+* **Tailwind CSS:**
+    * Configure Tailwind to use the provided CSS color variables for consistent theming.
+    * Utilize responsive design utilities to ensure compatibility across devices.
+    * Optimize CSS builds to reduce load times.
+
+* **Shadcn components:**
+    * Use pre-built and well-tested UI components to accelerate development.
+    * Customize components minimally with CSS overrides where necessary for branding consistency.
+    * Follow recommended patterns for component composition and state management.
+
+## Rules
+
+* Derive folder/file patterns **directly** from tech stack versions provided.
+* For Next.js 14 App Router: Enforce use of the `app/` directory with nested route folders for each section.
+* Never mix routing patterns (e.g., using `pages/` in an App Router project is prohibited).
+* Ensure external links (like the Sign In / Sign Up) are clearly marked and follow redirection protocols.
+
+## Rules Metrics
+
+Before starting the project development, create a metrics file in the root of the project called `cursor_metrics.md`.
+
+### Instructions:
+
+* Each time a cursor rule is used as context, update `cursor_metrics.md`.
+* Use the following format for `cursor_metrics.md:`
+
+# Rules Metrics
+
+## Usage
+
+The number of times rules is used as context
+
+* rule-name.mdc: 0
+* another-rule.mdc: 0
+* ...other rules
