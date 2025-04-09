@@ -6,7 +6,7 @@ const nextConfig = {
     unoptimized: true, // Disable image optimization for static export
   },
   trailingSlash: true, // Add trailing slashes to URLs
-  basePath: process.env.NODE_ENV === 'production' ? '/thedan-ai-landing' : '', // For GitHub Pages subdirectory
+  basePath: process.env.NODE_ENV === 'production' ? '' : '', // For GitHub Pages subdirectory
 };
 
 export default nextConfig;
